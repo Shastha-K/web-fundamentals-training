@@ -11,7 +11,14 @@
      ink #222322   text #3a3d3a   muted #5f645f   background #f6f7f2
      surface #ffffff   line #e2e5dc   accent #d3ff50   accent-dark #4d6b00 */
 :root {
-
+   --ink: #222322;
+   --text: #3a3d3a;
+   --muted: #5f645f;
+   --background: #f6f7f2;
+   --surface: #ffffff;
+   --line: #e2e5dc;
+   --accent: #d3ff50;
+   --accent-dark: #4d6b00;
 }
 
 /* TODO 2: Reset
@@ -19,22 +26,65 @@
    - images: max-width: 100%; height: auto; display: block
    - remove default margins on body, headings, paragraphs */
 
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
 
+img {
+   width: 300px;
+   height: 300px;
+   display: block;
+   padding: 10px;
+}
 /* TODO 3: Base typography (body font, size, line-height, colours) */
 
+body {
+   margin: 0;
+   background: var(--background);
+   color: var(--text);
+   font-family: Arial, sans-serif;
+   font-size: 1rem;
+   line-height: 1.5;
+}
 
 /* TODO 4: Buttons (.btn and .btn-primary), with :hover styles */
-
+   
 
 /* TODO 5: Header
    - Flexbox: logo, nav and search in a row (wrap on mobile)
    - position: sticky; top: 0  so it stays visible while scrolling */
+.header{
+   position:sticky;
+   top: 0;
+   z-index: 10;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   padding: 1rem;
+   background-color: #ffffff;
+}
 
+.logo img {
+   width: 10rem;
+}
+
+.lipstick img{
+   width:10rem;
+}
 
 /* TODO 6: Hero
    - dark background, white heading
    - one column on mobile, two columns from 768px */
-
+.hero {
+   display: grid;
+   gap: 1.5rem;
+   padding: 2rem 1rem;
+   background: var(--ink);
+   color: white;
+}
 
 /* TODO 7: Product grid
    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
